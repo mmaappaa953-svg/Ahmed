@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>متجر حسو للطاقة والحلول العصرية</title>
+  <style>
+    body {
+      font-family: Tahoma, Arial, sans-serif;
+      direction: rtl;
+      background: linear-gradient(135deg, #1e8449, #2471a3);
+      margin: 0;
+      padding: 0;
+      color: white;
+    }
+    header {
+      text-align: center;
+      padding: 20px;
+      font-size: 28px;
+      font-weight: bold;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    }
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      text-align: center;
+      padding: 15px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    }
+    .card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    .card h3 {
+      margin: 10px 0 5px;
+      font-size: 20px;
+    }
+    .price {
+      font-size: 18px;
+      color: #f1c40f;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+    .whatsapp-btn {
+      display: inline-block;
+      background: #25d366;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .whatsapp-btn:hover {
+      background: #1ebc57;
+    }
+    /* --- تصميم النموذج --- */
+    #order-section {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 20px;
+      margin: 30px 20px;
+      border-radius: 15px;
+      display: none; /* مخفي بشكل افتراضي */
+    }
+    #order-section h2 {
+      text-align: center;
+      margin-top: 0;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    .form-group input {
+      width: 95%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-family: Tahoma, sans-serif;
+    }
+    .submit-btn {
+      width: 100%;
+      padding: 12px;
+      font-size: 18px;
+      background: #f1c40f;
+      color: #333;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .submit-btn:hover {
+      background: #e0b30e;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+      background: rgba(0, 0, 0, 0.3);
+    }
+  </style>
+</head>
+<body>
+
+  <header>⚡ متجر حسو للطاقة والحلول العصرية ⚡</header>
+
+  <div class="container">
+    <!-- المنتجات -->
+    <div class="card">
+      <img src="https://i.ibb.co/MxJPvM3/Screenshot-2025-08-24-12-58-18-377-com-whatsapp.jpg" alt="كشاف بحث متعدد الوظائف">
+      <h3>كشاف بحث متعدد الوظائف</h3>
+      <p class="price">239 درهم</p>
+      <a class="whatsapp-btn" onclick="showOrderForm('كشاف بحث متعدد الوظائف', '239 درهم')">اطلب الآن</a>
+    </div>
+    <div class="card">
+      <img src="https://i.ibb.co/Y4xX67c/Screenshot-2025-08-24-12-58-04-141-com-whatsapp.jpg" alt="خلاط كهربائي للعصائر">
+      <h3>خلاط كهربائي للعصائر</h3>
+      <p class="price">299 درهم</p>
+      <a class="whatsapp-btn" onclick="showOrderForm('خلاط كهربائي للعصائر', '299 درهم')">اطلب الآن</a>
+    </div>
+    <div class="card">
+      <img src="https://i.ibb.co/yDNcj2f/Screenshot-2025-08-24-12-58-31-980-com-whatsapp.jpg" alt="عرض خاص: 2 خلاطات كهربائية">
+      <h3>عرض خاص: 2 خلاطات</h3>
+      <p class="price">499 درهم</p>
+      <a class="whatsapp-btn" onclick="showOrderForm('عرض خاص: 2 خلاطات', '499 درهم')">اطلب الآن</a>
+    </div>
+    <div class="card">
+      <img src="https://i.ibb.co/4RCksWSQ/Screenshot-2025-08-24-12-58-46-994-com-whatsapp.jpg" alt="عصّارة حمضيات كهربائية">
+      <h3>عصّارة حمضيات كهربائية</h3>
+      <p class="price">189 درهم</p>
+      <a class="whatsapp-btn" onclick="showOrderForm('عصّارة حمضيات كهربائية', '189 درهم')">اطلب الآن</a>
+    </div>
+    <div class="card">
+      <img src="https://i.ibb.co/b5ZShfJF/IMG-20250824-130243.jpg" alt="مصباح دراجة مع عداد">
+      <h3>مصباح دراجة مع عداد</h3>
+      <p class="price">189 درهم</p>
+      <a class="whatsapp-btn" onclick="showOrderForm('مصباح دراجة مع عداد', '189 درهم')">اطلب الآن</a>
+    </div>
+    <div class="card">
+      <img src="https://i.ibb.co/k3p0d2s/IMG-20250824-130300.jpg" alt="محول طاقة شمسي 2000 واط">
+      <h3>محول طاقة شمسي 2000 واط</h3>
+      <p class="price">499 درهم</p>
+      <a class="whatsapp-btn" onclick="showOrderForm('محول طاقة شمسي 2000 واط', '499 درهم')">اطلب الآن</a>
+    </div>
+  </div>
+
+  <!-- قسم نموذج الطلب (مخفي) -->
+  <section id="order-section">
+    <h2>📝 استمارة الطلب</h2>
+    <form id="order-form">
+      <div class="form-group">
+        <label for="firstName">الاسم الشخصي:</label>
+        <input type="text" id="firstName" required>
+      </div>
+      <div class="form-group">
+        <label for="lastName">الاسم العائلي (الكنية):</label>
+        <input type="text" id="lastName" required>
+      </div>
+      <div class="form-group">
+        <label for="address">العنوان الكامل:</label>
+        <input type="text" id="address" required>
+      </div>
+      <button type="button" class="submit-btn" onclick="sendOrder()">✅ إرسال الطلب عبر واتساب</button>
+    </form>
+  </section>
+
+  <footer>
+    📞 للتواصل: +212 607-072825 | 📧 hassou.store@gmail.com | 📍 المغرب
+  </footer>
+
+  <script>
+    // متغيرات لتخزين معلومات المنتج المختار
+    let selectedProduct = '';
+    let selectedPrice = '';
+
+    function showOrderForm(productName, productPrice) {
+      // تخزين معلومات المنتج
+      selectedProduct = productName;
+      selectedPrice = productPrice;
+
+      // إظهار قسم النموذج
+      const orderSection = document.getElementById('order-section');
+      orderSection.style.display = 'block';
+
+      // جعل الصفحة تنزل للأسفل ليرى الزبون النموذج
+      orderSection.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function sendOrder() {
+      // الحصول على المعلومات من النموذج
+      const firstName = document.getElementById('firstName').value;
+      const lastName = document.getElementById('lastName').value;
+      const address = document.getElementById('address').value;
+
+      // التحقق من أن جميع الحقول مملوءة
+      if (!firstName || !lastName || !address) {
+        alert('الرجاء ملء جميع الخانات لإتمام الطلب.');
+        return; // إيقاف الدالة إذا كانت هناك معلومات ناقصة
+      }
+
+      // تجهيز الرسالة
+      const phoneNumber = "212607072825";
+      const message = `
+        *طلب جديد* 🛒
+        -----------------
+        *المنتج:* ${selectedProduct}
+        *السعر:* ${selectedPrice}
+        -----------------
+        *معلومات الزبون:*
+        *الاسم الكامل:* ${firstName} ${lastName}
+        *العنوان:* ${address}
+      `;
+      
+      const encodedMessage = encodeURIComponent(message.trim());
+      const url = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+      
+      // فتح واتساب في نافذة جديدة
+      window.open(url, "_blank");
+    }
+  </script>
+
+</body>
+</html>
